@@ -33,6 +33,10 @@ public void ManualGame(){
 
  public void SaveSettingGame(){
      // abspeichern
+
+
+
+     // ---------
      SceneManager.LoadScene("StartMenu");  
  }
 
