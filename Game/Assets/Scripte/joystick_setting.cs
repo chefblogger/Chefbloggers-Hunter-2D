@@ -14,6 +14,7 @@ public class joystick_setting : MonoBehaviour
         JoystickLinks.SetActive(true);
         JoystickRechts.SetActive(false);
     }
+    
 
  
 }

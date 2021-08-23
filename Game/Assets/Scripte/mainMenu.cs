@@ -27,6 +27,15 @@ public void ManualGame(){
      SceneManager.LoadScene("StartMenu");  
  }
 
+ public void SettingGame(){
+     SceneManager.LoadScene("SettingMenu");  
+ }
+
+ public void SaveSettingGame(){
+     // abspeichern
+     SceneManager.LoadScene("StartMenu");  
+ }
+
  public void PlayAgainGame(){
      levelID = PlayerPrefs.GetInt("LevelNummer");
      SceneManager.LoadScene(levelID);  
