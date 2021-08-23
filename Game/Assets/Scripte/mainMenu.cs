@@ -9,15 +9,16 @@ public class mainMenu : MonoBehaviour
 
 private int levelID = 0;
 
+
  public void PlayGame(){
     //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
     SceneManager.LoadScene("Level1");     
 
- }
+    }
 
- public void QuitGame(){
-     Application.Quit();
- }
+    public void QuitGame(){
+        Application.Quit();
+    }
 
 public void ManualGame(){
      SceneManager.LoadScene("StartManual"); 
@@ -26,6 +27,11 @@ public void ManualGame(){
  public void BackGame(){
      SceneManager.LoadScene("StartMenu");  
  }
+
+ public void SettingGame(){
+     SceneManager.LoadScene("SettingMenu");  
+ }
+
 
  public void PlayAgainGame(){
      levelID = PlayerPrefs.GetInt("LevelNummer");
@@ -36,5 +42,7 @@ public void ResetGame(){
      PlayerPrefs.SetInt("highscore", 0);
      SceneManager.LoadScene("StartMenu");  
  }
+
+
  
 }

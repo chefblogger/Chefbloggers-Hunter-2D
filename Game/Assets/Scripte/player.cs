@@ -10,7 +10,25 @@ public class player : MonoBehaviour
     public float speed = 2f;
     public float rotationOffset = 270f;
    
+   void Update()
+   {
+    float horizontalInput = UltimateJoystick.GetHorizontalAxis( "movement" );
+    float verticalInput = UltimateJoystick.GetVerticalAxis( "movement" );
 
+    Vector2 movementDirection = new Vector2(horizontalInput, verticalInput);
+    float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
+    movementDirection.Normalize();
+
+    transform.Translate(movementDirection * speed * inputMagnitude * Time.deltaTime, Space.World);
+
+
+    if (movementDirection != Vector2.zero)
+    {
+        Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationOffset * Time.deltaTime);
+    }
+   }
+    /* 
     void Update(){
 
         //fingertouch einschalten 
@@ -39,6 +57,7 @@ public class player : MonoBehaviour
 
 
     }
+    */
 
 
 
